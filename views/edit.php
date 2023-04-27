@@ -8,131 +8,159 @@
         <meta name="author" content="">
         <link rel="shortcut icon" href="favicon.png">
         <title>Simple PHP MVC</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.10/dist/css/uikit.min.css"/>
-        <link rel="stylesheet" href="../assets/css/style.css">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="../public/assets/css/style.css">
     </head>
 
     <body>
-        <section>
-            <nav class="uk-navbar-container uk-margin-bottom">
-                <div uk-navbar>
-                    <div class="uk-navbar-left">
-                        <ul class="uk-navbar-nav">
-                            <h1 class="uk-margin-small-top">Customers</h1>
-                            <li>
-                                <a class="uk-margin-left" href="<?php use App\Models\Product;
+        <section class="p-4 bg-gradient-to-r from-sky-500 to-indigo-500">
+            <nav>
+                <div>
+                    <div class="grid grid-cols-5 w-fit justify-items-center">
+                        <div class="w-fit flex flex-wrap content-center mr-4">
+                            <h1 class="text-4xl text-neutral-100">Customers</h1>
+                        </div>
+                        <div class="flex flex-wrap content-center text-neutral-100">
+                            <a class="" href="<?= $routes->get('product')->getPath(); ?>">Back to Customer &emsp;</a>
+                            <a class="" href="<?= $routes->get('product-create')->getPath(); ?>">Create Company</a>
+                        </div>
+                        <div class="w-96">
+                            <form method="POST">
+                                <input type="text" placeholder="Search" name="search" class="hidden w-full lg:flex
+                                items-center text-sm leading-6 text-sky-700 bg-neutral-100 ring-1
+                                ring-slate-900/10 shadow-sm py-1.5 pl-2 pr-3 hover:ring-slate-300">
+                            </form>
+                        </div>
+                        <div class="w-fit flex flex-wrap content-center">
 
-                                echo $routes->get('product')->getPath(); ?>">Back
-                                    to Kunden</a>
-                            </li>
-                            <li>
-                                <a class="uk-margin-left" href="<?php echo $routes->get('product-create')->getPath(); ?>">
-                                    Create Company</a>
-                            </li>
-                        </ul>
+                        </div>
+                        <div class="block w-fit">
+                            <a class="w-fit block" href="https://w-vision.ch/de">
+                                <img class="w-fit block" alt="w-vision Logo" src="../public/assets/images/wvision_rgb.svg">
+                            </a>
+                        </div>
                     </div>
                 </div>
             </nav>
         </section>
-        <section class="uk-section uk-section-xsmall">
-            <div class="uk-container uk-container-expand">
-                <div class="uk-grid uk-grid-small uk-child-width-1-2 uk-flex uk-flex-center" data-uk-grid>
-                    <div class="uk-card uk-card-default">
-                        <div class="uk-card-header">
-                            <div class="uk-grid uk-grid-row uk-child-width-1-2">
-                                <div>
-                                    <a class="uk-margin-top uk-margin-bottom uk-button uk-button-secondary" href="/products">exit</a>
-                                </div>
-                                <div class="uk-flex uk-flex-right">
-                                    <p>Id: <?= $values['id']; ?></p>
-                                </div>
+        <section class="">
+            <div class="mx-96 px-48">
+                <div>
+                    <div class="w-full bg-white p-8 shadow-lg divide-y divide-neutral-500">
+                        <div class="pb-3">
+                            <div class="mb-3">
+                                <a class="p-3 bg-white text-black hover:text-white border-2 border-black hover:bg-black w-14 h-12 block" href="/products">exit</a>
+                            </div>
+                            <div class="">
+                                <p>Id: <?= $values['id']; ?></p>
                             </div>
                         </div>
 
-                        <form method="POST">
-                            <div class="uk-card-body">
+                        <div class="pt-3">
+                            <form method="POST">
                                 <label for="editCompanyName">Name:</label>
-                                <input class="uk-input uk-margin-top uk-margin-bottom" type="text" value="<?= $values['companyName']; ?>" name="editCompanyName" required>
+                                <input class="hidden w-full lg:flex items-center text-sm leading-6 p-2 mt-2
+                                bg-neutral-100 ring-1 ring-slate-900/10 shadow-sm py-1.5 mb-4"
+                                       type="text" value="<?= $values['companyName']; ?>" name="editCompanyName" required>
 
                                 <label for="editAddress">Address:</label>
-                                <div class="uk-grid uk-child-width-1-2">
-                                    <div class="uk-width-expand">
-                                        <input class="uk-input uk-margin-top uk-margin-bottom" type="text" value="<?=
-                                        $values['address']; ?>" name="editAddress" required>
+                                <div class="flex">
+                                    <div class="w-5/6 mr-10">
+                                        <input class="w-full lg:flex items-center text-sm leading-6 p-2 mt-2
+                                        bg-neutral-100 ring-1 ring-slate-900/10 shadow-sm py-1.5 mb-4"
+                                        type="text" value="<?= $values['address']; ?>" name="editAddress" required>
                                     </div>
-                                    <div class="uk-width-1-6">
-                                        <input class="uk-input uk-margin-top uk-margin-bottom" type="text" value="<?=
+                                    <div class="w-fit">
+                                        <input class="w-full lg:flex items-center text-sm leading-6 p-2 mt-2
+                                        bg-neutral-100 ring-1 ring-slate-900/10 shadow-sm py-1.5 mb-4" type="text" value="<?=
                                         $values['number']; ?>" name="editNumber" required>
                                     </div>
                                 </div>
 
                                 <label for="editPlz">PLZ/Location:</label>
-                                <div class="uk-grid uk-child-width-expand">
-                                    <div class="uk-width-1-5">
-                                        <input class="uk-input uk-margin-top uk-margin-bottom" type="text" value="<?=
-                                        $values['plz']; ?>" name="editPlz" required>
+                                <div class="flex">
+                                    <div class="w-fit">
+                                        <input class="w-full lg:flex items-center text-sm leading-6 p-2 mt-2
+                                        bg-neutral-100 ring-1 ring-slate-900/10 shadow-sm py-1.5 mb-4"
+                                               type="text" value="<?= $values['plz']; ?>" name="editPlz" required>
                                     </div>
-                                    <div class="uk-width-expand">
-                                        <input class="uk-input uk-margin-top uk-margin-bottom" type="text" value="<?=
+                                    <div class="w-5/6 ml-10">
+                                        <input class="w-full lg:flex items-center text-sm leading-6 p-2 mt-2
+                                        bg-neutral-100 ring-1 ring-slate-900/10 shadow-sm py-1.5" type="text" value="<?=
                                         $values['place']; ?>" name="editPlace" required>
                                     </div>
                                 </div>
 
                                 <label for="editMail">E-mail:</label>
-                                <input class="uk-input uk-margin-top uk-margin-bottom" type="email" value="<?=
+                                <input class="hidden w-full lg:flex items-center text-sm leading-6 p-2 mt-2 bg-neutral-100
+                                 ring-1 ring-slate-900/10 shadow-sm py-1.5  mb-4" type="email" value="<?=
                                 $values['mail']; ?>" name="editMail" required>
 
                                 <label for="editPhone">Phone:</label>
-                                <input class="uk-input uk-margin-top uk-margin-bottom" type="tel" value="<?=
+                                <input class="hidden w-full lg:flex items-center text-sm leading-6 p-2 mt-2 bg-neutral-100
+                                ring-1 ring-slate-900/10 shadow-sm py-1.5 mb-4" type="tel" value="<?=
                                 $values['phone']; ?>" name="editPhone" required>
 
                                 <label for="editOk">Head:</label>
-                                <div class="uk-grid uk-child-width-1-2">
-                                    <div>
-                                        <input class="uk-input uk-margin-top uk-margin-bottom" type="text" value="<?=
-                                        $values['ok']; ?>" name="editOk" required>
+                                <div class="flex">
+                                    <div class="w-1/2">
+                                        <input class="w-full lg:flex items-center text-sm leading-6 p-2 mt-2
+                                        bg-neutral-100 ring-1 ring-slate-900/10 shadow-sm py-1.5 mb-4"
+                                               type="text" value="<?= $values['ok']; ?>" name="editOk" required>
                                     </div>
-                                    <div>
-                                        <input class="uk-input uk-margin-top uk-margin-bottom" type="text" value="<?=
+                                    <div class="w-1/2 ml-10">
+                                        <input class="w-full lg:flex items-center text-sm leading-6 p-2 mt-2
+                                        bg-neutral-100 ring-1 ring-slate-900/10 shadow-sm py-1.5 mb-4" type="text" value="<?=
                                         $values['okFirst']; ?>" name="editOkFirst" required>
                                     </div>
                                 </div>
 
                                 <p>Status:</p>
                                 <div>
-                                    <label class="uk-margin-bottom"><input class="uk-radio" type="radio" value="1" <?=
+                                    <label class=""><input class="" type="radio" value="1" <?=
                                         $values['status'];?> name="editStatus" <?php if ($values['status'] == 1)
                                             :?> checked <?php endif;?>> &emsp; On</label>
                                 </div>
-                                <div class="uk-margin-bottom">
-                                    <label class="uk-margin-bottom"><input class="uk-radio" type="radio" value="0" <?=
+                                <div class="">
+                                    <label class=""><input class="mb-8" type="radio" value="0" <?=
                                         $values['status'] ?> name="editStatus" <?php if ($values['status'] == 0)
                                             :?> checked <?php endif;?>> &emsp; Off</label>
                                 </div>
 
-                                <button class="uk-button uk-button-default uk-button-primary" type="submit" name="done"
-                                        id="done">done</button>
-                                <a class="uk-button uk-button-danger" href="#modal-sections" data-uk-toggle>Delete</a>
+                                <div class="flex">
+                                    <div class="w-fit">
+                                        <button class="block text-blue-500 bg-white border-2 border-blue-500 hover:bg-blue-600 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 py-2.5 text-center" type="submit" name="done" id="done">
+                                            done
+                                        </button>
+                                    </div>
 
-                                <div id="modal-sections" data-uk-modal>
-                                    <div class="uk-modal-dialog">
-                                        <div class="uk-modal-header">
-                                            <h2 class="uk-modal-title">Do you <strong>really</strong> want to delete this entry?</h2>
-                                        </div>
-                                        <div class="uk-modal-footer uk-text-right">
-                                            <button class="uk-button uk-button-primary uk-modal-close" type="button">Cancel</button>
-                                            <a href="/delete/<?= $values['id'] ?>" class="uk-button uk-button-danger">Delete</a>
+                                    <div class="w-fit ml-10">
+                                        <button id="delete-button" class="block text-red-500 bg-white border-2 border-red-500 hover:bg-red-600 hover:text-white focus:ring-4 focus:outline-none focus:ring-red-300 font-medium text-sm px-5 py-2.5 text-center" type="button">
+                                            Delete
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div id="popup-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                                    <div class="relative w-full max-w-md max-h-full">
+                                        <div class="relative bg-white shadow">
+                                            <div class="p-6 text-center">
+                                                <svg aria-hidden="true" class="mx-auto mb-4 text-gray-400 w-14 h-14" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                                <h3 class="mb-5 text-lg font-normal text-gray-500">Are you sure you want to delete this product?</h3>
+                                                <a href="/delete/<?= $values['id'] ?>" data-modal-hide="popup-modal" type="button" class="text-white bg-red-500 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+                                                    Yes, I'm sure
+                                                </a>
+                                                <button data-modal-hide="popup-modal" type="button" id="close-button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10">No, cancel</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.10/dist/js/uikit.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.10/dist/js/uikit-icons.min.js"></script>
+    <script src="../public/assets/script/script.js"></script>
     </body>
 </html>
