@@ -8,88 +8,124 @@
         <meta name="author" content="">
         <link rel="shortcut icon" href="favicon.png">
         <title>Simple PHP MVC</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.10/dist/css/uikit.min.css"/>
+        <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="../public/assets/css/style.css">
     </head>
 
     <body>
-    <section>
-        <nav class="uk-navbar-container uk-margin-bottom">
-            <div uk-navbar>
-                <div class="uk-navbar-left">
-                    <ul class="uk-navbar-nav">
-                        <h1 class="uk-margin-small-top">Customers</h1>
-                        <li>
-                            <a class="uk-margin-left" href="<?= $routes->get('product')->getPath(); ?>">Back to Kunden</a>
-                        </li>
-                    </ul>
+        <section class="p-4 bg-gradient-to-r from-sky-500 to-indigo-500">
+            <nav>
+                <div>
+                    <div class="grid grid-cols-5 w-fit justify-items-center">
+                        <div class="w-fit flex flex-wrap content-center mr-4">
+                            <h1 class="text-4xl text-neutral-100">Customers</h1>
+                        </div>
+                        <div class="flex flex-wrap content-center text-neutral-100">
+                            <a href="<?= $routes->get('product')->getPath(); ?>">Back to Customer &emsp;</a>
+                        </div>
+                        <div class="w-96">
+                            <form method="POST">
+                                <input type="text" placeholder="Search" name="search" class="hidden w-full lg:flex items-center text-sm leading-6 text-sky-700 bg-neutral-100
+                                                ring-1 ring-slate-900/10 shadow-sm py-1.5 pl-2 pr-3 hover:ring-slate-300" >
+                            </form>
+                        </div>
+                        <div class="w-fit flex flex-wrap content-center">
+                            <form action="products" method="post">
+                                <input class="px-3 bg-neutral-100 hover:text-neutral-100 hover:border border-neutral-100 hover:bg-gradient-to-r hover:from-sky-500 hover:to-indigo-500 w-32 h-12" type="submit" name="view" value="Compact View">
+                            </form>
+                        </div>
+                        <div>
+                            <a class="w-fit" href="https://w-vision.ch/de">
+                                <img class="w-fit" alt="w-vision Logo" src="../public/assets/images/wvision_rgb.svg">
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </nav>
-    </section>
-    <section class="uk-section uk-section-xsmall">
-        <div class="uk-container uk-container-expand">
-            <div class="uk-grid uk-grid-small uk-child-width-1-2 uk-flex uk-flex-center" data-uk-grid>
-                <div class="uk-card uk-card-default">
-                    <div class="uk-card-header">
-                        <a class="uk-button uk-button-secondary uk-margin-top uk-margin-bottom" href="/products">exit</a>
-                        <form method="POST">
-                            <div class="uk-card-body">
-                                <p>Company:</p>
-                                <input class="uk-input" type="text" placeholder="z.B w-vision AG" name="createCompany" required>
-
-                                <p>Address:</p>
-                                <div class="uk-grid uk-child-width-1-2">
-                                    <div class="uk-width-expand">
-                                        <input class="uk-input" type="text" placeholder="z.B Sandgruebestrasse" name="createAddress">
-                                    </div>
-                                    <div class="uk-width-1-6">
-                                        <input class="uk-input" type="text" placeholder="z.B 4" name="createStreetNumber" required>
-                                    </div>
-                                </div>
-
-                                <p>PLZ/Location:</p>
-                                <div class="uk-grid uk-child-width-1-2">
-                                    <div class="uk-width-1-5">
-                                        <input class="uk-input" type="number" placeholder="z.B 6210" name="createPlz" required>
-                                    </div>
-                                    <div class="uk-width-expand">
-                                        <input class="uk-input" type="text" placeholder="z.B Sursee" name="createPlace" required>
-                                    </div>
-                                </div>
-
-                                <p>E-mail:</p>
-                                <input class="uk-input" type="email" placeholder="z.B s.drohsen@w-vision.ch" name="createMail" required>
-
-                                <p>Phone:</p>
-                                <input class="uk-input" type="tel" pattern="^\+(\s|([0-9]))+$" placeholder="z.B +41 41 926 07 20" name="createPhone" required>
-
-                                <p>Head:</p>
-                                <div class="uk-grid uk-child-width-1-2">
-                                    <div>
-                                        <input class="uk-input" type="text" placeholder="z.B Adrian Hess" name="createOk" required>
-                                    </div>
-                                    <div>
-                                        <input class="uk-input" type="text" placeholder="z.B Adrian Hess" name="createOkFirst" required>
-                                    </div>
-                                </div>
-
-                                <p>Status:</p>
+            </nav>
+        </section>
+        <section>
+            <div class="mx-96 px-48">
+                <div>
+                    <div class="w-full bg-white p-8 shadow-lg divide-y divide-neutral-500">
+                        <div class="my-3">
+                            <form method="POST">
                                 <div>
-                                    <label class="uk-margin-bottom"><input class="uk-radio" type="radio" value="1" name="createStatus">&emsp; On</label>
+                                    <p>Company:</p>
+                                    <input  class="hidden w-full lg:flex items-center text-sm leading-6 p-2 mt-2
+                                            bg-neutral-100 ring-1 ring-slate-900/10 shadow-sm py-1.5 mb-4"
+                                            type="text" placeholder="z.B w-vision AG" name="createCompany" required>
+
+                                    <p>Address:</p>
+                                    <div class="flex">
+                                        <div class="w-5/6 mr-10">
+                                            <input class="w-full lg:flex items-center text-sm leading-6 p-2 mt-2
+                                                   bg-neutral-100 ring-1 ring-slate-900/10 shadow-sm py-1.5 mb-4"
+                                                   type="text" placeholder="z.B Sandgruebestrasse" name="createAddress">
+                                        </div>
+                                        <div class="w-fit">
+                                            <input class="w-full lg:flex items-center text-sm leading-6 p-2 mt-2
+                                                   bg-neutral-100 ring-1 ring-slate-900/10 shadow-sm py-1.5 mb-4"
+                                                   type="text" placeholder="z.B 4" name="createStreetNumber" required>
+                                        </div>
+                                    </div>
+
+                                    <p>PLZ/Location:</p>
+
+                                    <div class="flex">
+                                        <div class="w-fit">
+                                            <input class="w-full lg:flex items-center text-sm leading-6 p-2 mt-2
+                                                   bg-neutral-100 ring-1 ring-slate-900/10 shadow-sm py-1.5 mb-4"
+                                                   type="number" placeholder="z.B 6210" name="createPlz" required>
+                                        </div>
+                                        <div class="w-5/6 ml-10">
+                                            <input class="w-full lg:flex items-center text-sm leading-6 p-2 mt-2
+                                                   bg-neutral-100 ring-1 ring-slate-900/10 shadow-sm py-1.5"
+                                                   type="text" placeholder="z.B Sursee" name="createPlace" required>
+                                        </div>
+                                    </div>
+
+                                    <p>E-mail:</p>
+                                    <input class="hidden w-full lg:flex items-center text-sm leading-6 p-2 mt-2 bg-neutral-100
+                                           ring-1 ring-slate-900/10 shadow-sm py-1.5  mb-4"
+                                           type="email" placeholder="z.B s.drohsen@w-vision.ch" name="createMail" required>
+
+                                    <p>Phone:</p>
+                                    <input class="hidden w-full lg:flex items-center text-sm leading-6 p-2 mt-2 bg-neutral-100
+                                           ring-1 ring-slate-900/10 shadow-sm py-1.5 mb-4"
+                                           type="tel" pattern="^\+(\s|([0-9]))+$" placeholder="z.B +41 41 926 07 20" name="createPhone" required>
+
+                                    <p>Head:</p>
+
+                                    <div class="flex">
+                                        <div class="w-1/2">
+                                            <input class="w-full lg:flex items-center text-sm leading-6 p-2 mt-2
+                                                   bg-neutral-100 ring-1 ring-slate-900/10 shadow-sm py-1.5 mb-4"
+                                                   type="text" placeholder="z.B Adrian" name="createOk" required>
+                                        </div>
+                                        <div class="w-1/2 ml-10">
+                                            <input class="w-full lg:flex items-center text-sm leading-6 p-2 mt-2
+                                                   bg-neutral-100 ring-1 ring-slate-900/10 shadow-sm py-1.5 mb-4"
+                                                   type="text" placeholder="z.B Hess" name="createOkFirst" required>
+                                        </div>
+                                    </div>
+
+                                    <p>Status:</p>
+                                    <div>
+                                        <label><input type="radio" value="1" name="createStatus">&emsp; On</label>
+                                    </div>
+                                    <div>
+                                        <label><input type="radio" value="0" name="createStatus">&emsp; Off</label>
+                                    </div>
+
+                                    <button class="block text-blue-500 bg-white border-2 border-blue-500 hover:bg-blue-600 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 py-2.5 text-center mt-4"  type="submit" name="create" id="create">
+                                        create
+                                    </button>
                                 </div>
-                                <div class="uk-margin-bottom">
-                                    <label class="uk-margin-bottom"><input class="uk-radio" type="radio" value="0" name="createStatus">&emsp; Off</label>
-                                </div>
-                                <button class="uk-button uk-button-primary" type="submit" name="create" id="create">create</button>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.10/dist/js/uikit.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.10/dist/js/uikit-icons.min.js"></script>
     </body>
 </html>

@@ -31,8 +31,8 @@ if(isset($_POST['view'])) {
                             <h1 class="text-4xl text-neutral-100">Customers</h1>
                         </div>
                         <div class="flex flex-wrap content-center text-neutral-100">
-                            <a class="" href="<?= $routes->get('product')->getPath(); ?>">Back to Customer &emsp;</a>
-                            <a class="" href="<?= $routes->get('product-create')->getPath(); ?>">Create Company</a>
+                            <a href="<?= $routes->get('product')->getPath(); ?>">Back to Customer &emsp;</a>
+                            <a href="<?= $routes->get('product-create')->getPath(); ?>">Create Company</a>
                         </div>
                         <div class="w-96">
                             <form method="POST">
@@ -53,7 +53,7 @@ if(isset($_POST['view'])) {
                     </div>
                 </div>
             </nav>
-    </section>
+        </section>
 
         <section class="px-28 mt-4">
             <div class="<?php if ($_SESSION['count'] % 2 !== 0) {echo "";} else {echo "";}?>">
@@ -85,7 +85,7 @@ if(isset($_POST['view'])) {
                         <?php else: ?>
                             <?php foreach($arrCustomers as $customer): ?>
                                 <figure class="w-full bg-white p-8 shadow-lg">
-                                    <div class="">
+                                    <div>
                                         <div>
                                             <div class="divide-y divide-neutral-500">
                                                 <div class="pb-3">
@@ -114,7 +114,7 @@ if(isset($_POST['view'])) {
                         <?php endif; ?>
                     </div>
                     <?php if(isset($_POST["search"])) : ?>
-                        <a class="" href="<?php echo $routes->get('product')->getPath(); ?>">Back to products</a>
+                        <a href="<?php echo $routes->get('product')->getPath(); ?>">Back to products</a>
                     <?php endif; ?>
                 </div>
             </div>

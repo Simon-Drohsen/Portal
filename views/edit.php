@@ -13,45 +13,46 @@
     </head>
 
     <body>
-        <section class="p-4 bg-gradient-to-r from-sky-500 to-indigo-500">
-            <nav>
-                <div>
-                    <div class="grid grid-cols-5 w-fit justify-items-center">
-                        <div class="w-fit flex flex-wrap content-center mr-4">
-                            <h1 class="text-4xl text-neutral-100">Customers</h1>
-                        </div>
-                        <div class="flex flex-wrap content-center text-neutral-100">
-                            <a class="" href="<?= $routes->get('product')->getPath(); ?>">Back to Customer &emsp;</a>
-                            <a class="" href="<?= $routes->get('product-create')->getPath(); ?>">Create Company</a>
-                        </div>
-                        <div class="w-96">
-                            <form method="POST">
-                                <input type="text" placeholder="Search" name="search" class="hidden w-full lg:flex
-                                items-center text-sm leading-6 text-sky-700 bg-neutral-100 ring-1
-                                ring-slate-900/10 shadow-sm py-1.5 pl-2 pr-3 hover:ring-slate-300">
-                            </form>
-                        </div>
-                        <div class="w-fit flex flex-wrap content-center">
-
-                        </div>
-                        <div class="block w-fit">
-                            <a class="w-fit block" href="https://w-vision.ch/de">
-                                <img class="w-fit block" alt="w-vision Logo" src="../public/assets/images/wvision_rgb.svg">
-                            </a>
-                        </div>
+    <section class="p-4 bg-gradient-to-r from-sky-500 to-indigo-500">
+        <nav>
+            <div>
+                <div class="grid grid-cols-5 w-fit justify-items-center">
+                    <div class="w-fit flex flex-wrap content-center mr-4">
+                        <h1 class="text-4xl text-neutral-100">Customers</h1>
+                    </div>
+                    <div class="flex flex-wrap content-center text-neutral-100">
+                        <a href="<?= $routes->get('product')->getPath(); ?>">Back to Customer &emsp;</a>
+                        <a href="<?= $routes->get('product-create')->getPath(); ?>">Create Company</a>
+                    </div>
+                    <div class="w-96">
+                        <form method="POST">
+                            <input type="text" placeholder="Search" name="search" class="hidden w-full lg:flex items-center text-sm leading-6 text-sky-700 bg-neutral-100
+                                        ring-1 ring-slate-900/10 shadow-sm py-1.5 pl-2 pr-3 hover:ring-slate-300" >
+                        </form>
+                    </div>
+                    <div class="w-fit flex flex-wrap content-center">
+                        <form action="products" method="post">
+                            <input class="px-3 bg-neutral-100 hover:text-neutral-100 hover:border border-neutral-100 hover:bg-gradient-to-r hover:from-sky-500 hover:to-indigo-500 w-32 h-12" type="submit" name="view" value="Compact View">
+                        </form>
+                    </div>
+                    <div>
+                        <a class="w-fit" href="https://w-vision.ch/de">
+                            <img class="w-fit" alt="w-vision Logo" src="../public/assets/images/wvision_rgb.svg">
+                        </a>
                     </div>
                 </div>
-            </nav>
-        </section>
-        <section class="">
+            </div>
+        </nav>
+    </section>
+        <section>
             <div class="mx-96 px-48">
                 <div>
                     <div class="w-full bg-white p-8 shadow-lg divide-y divide-neutral-500">
                         <div class="pb-3">
                             <div class="mb-3">
-                                <a class="p-3 bg-white text-black hover:text-white border-2 border-black hover:bg-black w-14 h-12 block" href="/products">exit</a>
+                                <a class="p-2.5 bg-white text-black hover:text-white border-2 border-black hover:bg-black w-14 h-12 block" href="/products">exit</a>
                             </div>
-                            <div class="">
+                            <div>
                                 <p>Id: <?= $values['id']; ?></p>
                             </div>
                         </div>
@@ -117,12 +118,12 @@
 
                                 <p>Status:</p>
                                 <div>
-                                    <label class=""><input class="" type="radio" value="1" <?=
+                                    <label><input type="radio" value="1" <?=
                                         $values['status'];?> name="editStatus" <?php if ($values['status'] == 1)
                                             :?> checked <?php endif;?>> &emsp; On</label>
                                 </div>
-                                <div class="">
-                                    <label class=""><input class="mb-8" type="radio" value="0" <?=
+                                <div>
+                                    <label><input class="mb-8" type="radio" value="0" <?=
                                         $values['status'] ?> name="editStatus" <?php if ($values['status'] == 0)
                                             :?> checked <?php endif;?>> &emsp; Off</label>
                                 </div>
