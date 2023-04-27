@@ -21,8 +21,8 @@
                             <h1 class="text-4xl text-neutral-100">Customers</h1>
                         </div>
                         <div class="flex flex-wrap content-center text-neutral-100">
-                            <a class="" href="<?= $routes->get('product')->getPath(); ?>">Back to Customer &emsp;</a>
-                            <a class="" href="<?= $routes->get('product-create')->getPath(); ?>">Create Company</a>
+                            <a href="<?= $routes->get('product')->getPath(); ?>">Back to Customer &emsp;</a>
+                            <a href="<?= $routes->get('product-create')->getPath(); ?>">Create Company</a>
                         </div>
                         <div class="w-96">
                             <form method="POST">
@@ -43,15 +43,15 @@
                 </div>
             </nav>
         </section>
-        <section class="">
+        <section>
             <div class="mx-96 px-48">
                 <div>
                     <div class="w-full bg-white p-8 shadow-lg divide-y divide-neutral-500">
                         <div class="pb-3">
                             <div class="mb-3">
-                                <a class="p-3 bg-white text-black hover:text-white border-2 border-black hover:bg-black w-14 h-12 block" href="/products">exit</a>
+                                <a class="p-2.5 bg-white text-black hover:text-white border-2 border-black hover:bg-black w-14 h-12 block" href="/products">exit</a>
                             </div>
-                            <div class="">
+                            <div>
                                 <p>Id: <?= $values['id']; ?></p>
                             </div>
                         </div>
@@ -117,12 +117,12 @@
 
                                 <p>Status:</p>
                                 <div>
-                                    <label class=""><input class="" type="radio" value="1" <?=
+                                    <label><input type="radio" value="1" <?=
                                         $values['status'];?> name="editStatus" <?php if ($values['status'] == 1)
                                             :?> checked <?php endif;?>> &emsp; On</label>
                                 </div>
-                                <div class="">
-                                    <label class=""><input class="mb-8" type="radio" value="0" <?=
+                                <div>
+                                    <label><input class="mb-8" type="radio" value="0" <?=
                                         $values['status'] ?> name="editStatus" <?php if ($values['status'] == 0)
                                             :?> checked <?php endif;?>> &emsp; Off</label>
                                 </div>
