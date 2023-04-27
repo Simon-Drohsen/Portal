@@ -53,7 +53,7 @@ if(isset($_POST['view'])) {
                     </div>
                 </div>
             </nav>
-    </section>
+        </section>
 
         <section class="px-28 mt-4">
             <div class="<?php if ($_SESSION['count'] % 2 !== 0) {echo "";} else {echo "";}?>">
