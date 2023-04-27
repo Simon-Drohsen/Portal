@@ -31,8 +31,8 @@ if(isset($_POST['view'])) {
                             <h1 class="text-4xl text-neutral-100">Customers</h1>
                         </div>
                         <div class="flex flex-wrap content-center text-neutral-100">
-                            <ahref="<?= $routes->get('product')->getPath(); ?>">Back to Customer &emsp;</a>
-                            <ahref="<?= $routes->get('product-create')->getPath(); ?>">Create Company</a>
+                            <a href="<?= $routes->get('product')->getPath(); ?>">Back to Customer &emsp;</a>
+                            <a href="<?= $routes->get('product-create')->getPath(); ?>">Create Company</a>
                         </div>
                         <div class="w-96">
                             <form method="POST">
