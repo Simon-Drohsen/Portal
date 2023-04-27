@@ -23,7 +23,7 @@ if(isset($_POST['view'])) {
     </head>
 
     <body class="bg-neutral-100">
-        <section class="p-4 bg-sky-700 mb-4">
+        <section class="p-4 bg-gradient-to-r from-sky-500 to-indigo-500">
             <nav>
                 <div>
                     <div class="grid grid-cols-5 w-fit justify-items-center">
@@ -37,12 +37,12 @@ if(isset($_POST['view'])) {
                         <div class="w-96">
                             <form method="POST">
                                 <input type="text" placeholder="Search" name="search" class="hidden w-full lg:flex items-center text-sm leading-6 text-sky-700 bg-neutral-100
-                                rounded-md ring-1 ring-slate-900/10 shadow-sm py-1.5 pl-2 pr-3 hover:ring-slate-300" >
+                                        ring-1 ring-slate-900/10 shadow-sm py-1.5 pl-2 pr-3 hover:ring-slate-300" >
                             </form>
                         </div>
                         <div class="w-fit flex flex-wrap content-center">
                             <form action="products" method="post">
-                                <input class="px-3 rounded bg-neutral-100 hover:text-neutral-100 hover:border border-neutral-100 hover:bg-sky-700" type="submit" name="view" value="Compact View">
+                                <input class="px-3 bg-neutral-100 hover:text-neutral-100 hover:border border-neutral-100 hover:bg-gradient-to-r hover:from-sky-500 hover:to-indigo-500 w-32 h-12" type="submit" name="view" value="Compact View">
                             </form>
                         </div>
                         <div>
@@ -53,7 +53,7 @@ if(isset($_POST['view'])) {
                     </div>
                 </div>
             </nav>
-        </section>
+    </section>
 
         <section class="px-28 mt-4">
             <div class="<?php if ($_SESSION['count'] % 2 !== 0) {echo "";} else {echo "";}?>">
@@ -75,7 +75,7 @@ if(isset($_POST['view'])) {
                                                     <p>Status: <?php if($customer['status'] == 1) {echo "On";} else { echo "Off";}?></p>
                                                 </div>
                                                 <div>
-                                                    <a class="mt-4 rounded text-neutral-100 bg-sky-700 w-fit p-2.5 px-3.5" href="/edit/<?= $customer['id'] ?>">edit</a>
+                                                    <a class="mt-4 text-neutral-100 hover:border border-neutral-100 bg-gradient-to-r from-sky-500 to-indigo-500 w-14 h-12 p-2.5 px-3.5" href="/edit/<?= $customer['id'] ?>">edit</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -84,7 +84,7 @@ if(isset($_POST['view'])) {
                             </ul>
                         <?php else: ?>
                             <?php foreach($arrCustomers as $customer): ?>
-                                <figure class="w-full bg-white rounded-xl p-8 shadow-lg">
+                                <figure class="w-full bg-white p-8 shadow-lg">
                                     <div class="">
                                         <div>
                                             <div class="divide-y divide-neutral-500">
@@ -104,7 +104,7 @@ if(isset($_POST['view'])) {
                                                     <p class="col-span-4 text-right"><?= $customer['ok'] . " " . $customer['okFirst'] ?></p>
                                                     <p>Status:</p>
                                                     <p class="col-span-4 text-right"><?php if($customer['status'] == 1) {echo "On";} else { echo "Off";}?></p>
-                                                    <a class="mt-4 rounded text-neutral-100 bg-sky-700 w-fit p-2.5 px-3.5" href="/edit/<?= $customer['id'] ?>">edit</a>
+                                                    <a class="mt-4 text-neutral-100 hover:border border-neutral-100 bg-gradient-to-r from-sky-500 to-indigo-500 w-14 h-12 p-2.5 px-3.5" href="/edit/<?= $customer['id'] ?>">edit</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -114,7 +114,7 @@ if(isset($_POST['view'])) {
                         <?php endif; ?>
                     </div>
                     <?php if(isset($_POST["search"])) : ?>
-                        <a class="rounded-none" href="<?php echo $routes->get('product')->getPath(); ?>">Back to products</a>
+                        <a class="" href="<?php echo $routes->get('product')->getPath(); ?>">Back to products</a>
                     <?php endif; ?>
                 </div>
             </div>
