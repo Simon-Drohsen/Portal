@@ -1,5 +1,5 @@
 <?php
-define('SITE_NAME', 'http://localhost:8888/');
+define('SITE_NAME', 'http://localhost/');
 
 define('APP_ROOT', dirname(dirname(__FILE__)));
 define('URL_ROOT', '../public/index.php');

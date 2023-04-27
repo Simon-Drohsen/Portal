@@ -17,9 +17,8 @@ class ProductController
         $product = new Product();
 
         if(isset($_POST["search"])){
-
-            $arrCustomers = $product->searchAll();
             $searchTerm = $_POST["search"];
+            $arrCustomers = $product->searchAll();
         }
         else {
             $arrCustomers = $product->readAll();

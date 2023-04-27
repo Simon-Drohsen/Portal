@@ -1,13 +1,17 @@
-.uk-button-secondary {
-    color: #1a6bae;
-    background-color: #ebebeb;
+@tailwind base;
+@tailwind components;
+@tailwind utilities
+
+.navbar {
+    background: #f8f8f8;
+    margin-bottom: 20px;
 }
 
-.uk-button-secondary:hover {
-    background-color: #1a6bae;
-    color: #ebebeb;
+.nav {
+    display: flex;
+    position: relative;
 }
 
-.uk-card {
-    min-width: 330px;
+.margin-left {
+    margin-left: 20px;
 }

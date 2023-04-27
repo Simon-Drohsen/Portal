@@ -9,7 +9,7 @@
         <link rel="shortcut icon" href="favicon.png">
         <title>Simple PHP MVC</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.10/dist/css/uikit.min.css"/>
-        <link rel="stylesheet" href="../assets/css/style.css">
+        <link rel="stylesheet" href="../public/assets/css/style.css">
     </head>
 
     <body>
