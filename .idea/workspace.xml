@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1221c3f2-b1fd-4704-bca8-7e611e67879b" name="Changes" comment="test">
+    <list default="true" id="1221c3f2-b1fd-4704-bca8-7e611e67879b" name="Changes" comment="products.php button bearbeitet">
       <change beforePath="$PROJECT_DIR$/../Erste Website" beforeDir="false" afterPath="$PROJECT_DIR$/../Erste Website" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Telefon-Evaluieren" beforeDir="false" afterPath="$PROJECT_DIR$/../Telefon-Evaluieren" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/create.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +167,21 @@
       <option name="project" value="LOCAL" />
       <updated>1682604901477</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="master test">
+      <created>1682673055804</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1682673055804</updated>
+    </task>
+    <task id="LOCAL-00010" summary="products.php button bearbeitet">
+      <created>1682673235246</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1682673235246</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +205,8 @@
     <MESSAGE value="Edit mit tailwing beendet jz create" />
     <MESSAGE value="Edit ist fertig" />
     <MESSAGE value="products ist fertig" />
-    <option name="LAST_COMMIT_MESSAGE" value="products ist fertig" />
+    <MESSAGE value="master test" />
+    <MESSAGE value="products.php button bearbeitet" />
+    <option name="LAST_COMMIT_MESSAGE" value="products.php button bearbeitet" />
   </component>
 </project>
