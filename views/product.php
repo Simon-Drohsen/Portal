@@ -43,8 +43,8 @@ if(isset($_POST['view'])) {
                         <div class="mb-4 md:mb-0 l:w-fit flex flex-wrap content-center">
                             <form action="products" method="post">
                                 <input class="px-3 bg-neutral-100 hover:text-neutral-100 hover:border border-neutral-100
-                                     hover:bg-gradient-to-r hover:from-sky-500 hover:to-indigo-300 w-32 h-12" type="submit"
-                                       name="view" value="<?php if ($_SESSION['count'] % 2 == 0) {echo "Compact View";} else {echo "Detail View";}?>">
+                                     hover:bg-sky-700 w-32 h-12" type="submit" name="view" value="<?php if ($_SESSION['count'] % 2 == 0)
+                                     {echo "Compact View";} else {echo "Detail View";}?>">
                             </form>
                         </div>
                         <div class="invisible 2xl:visible">
