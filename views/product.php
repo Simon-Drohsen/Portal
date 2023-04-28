@@ -26,7 +26,7 @@ if(isset($_POST['view'])) {
         <section class="p-4 bg-gradient-to-r from-sky-700 to-slate-300">
             <nav>
                 <div>
-                    <div class=" grid md:grid-cols-4 xl:grid-cols-5 justify-items-center">
+                    <div class=" grid grid-cols-4 2xl:grid-cols-5 justify-items-center">
                         <div class="mb-4 md:mb-0 l:w-fit flex flex-wrap content-center mr-4">
                             <h1 class="text-4xl text-neutral-100">Customers</h1>
                         </div>
@@ -119,7 +119,9 @@ if(isset($_POST['view'])) {
                         <?php endif; ?>
                     </div>
                     <?php if(isset($_POST["search"])) : ?>
-                        <a href="<?php echo $routes->get('product')->getPath(); ?>">Back to products</a>
+                        <a class="p-3 bg-neutral-100 text-neutral-100 hover:border hover:bg-neutral-100 border-neutral-100
+                        bg-sky-700 hover:text-black w-32 h-12" href="<?php echo $routes->get('product')->getPath(); ?>">Back to products</a>
+                    <p class="pt-3">Keine Ergebnisse gefunden</p>
                     <?php endif; ?>
                 </div>
             </div>

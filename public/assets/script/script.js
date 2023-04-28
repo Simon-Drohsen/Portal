@@ -6,7 +6,7 @@ function hideModal() {
     document.getElementById('popup-modal').classList.add('hidden');
 }
 
-document.getElementById('delete-button').addEventListener('click', function() {
+document.getElementById('delete-button').addEventListener('click', () => {
     showModal();
 });
 
