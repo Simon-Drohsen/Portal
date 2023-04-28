@@ -23,7 +23,7 @@ if(isset($_POST['view'])) {
     </head>
 
     <body class="bg-neutral-100">
-        <section class="p-4 bg-gradient-to-r from-sky-700 to-indigo-300">
+        <section class="p-4 bg-gradient-to-r from-sky-700 to-slate-300">
             <nav>
                 <div>
                     <div class=" grid md:grid-cols-4 xl:grid-cols-5 justify-items-center">
@@ -77,8 +77,8 @@ if(isset($_POST['view'])) {
                                                     <p>Status: <?php if($customer['status'] == 1) {echo "On";} else { echo "Off";}?></p>
                                                 </div>
                                                 <div class="mb-4 2xl:my-4 order-4">
-                                                    <a class="mt-4 text-neutral-100 hover:border border-neutral-100 bg-gradient-to-r
-                                                     from-sky-500 to-indigo-500 w-14 h-12 p-2.5 px-3.5" href="/edit/<?= $customer['id'] ?>">edit</a>
+                                                    <a class="mt-4 text-neutral-100 hover:border border-neutral-100
+                                                    bg-sky-700 w-14 h-12 p-2.5 px-3.5" href="/edit/<?= $customer['id'] ?>">edit</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -108,7 +108,7 @@ if(isset($_POST['view'])) {
                                                     <p>Status:</p>
                                                     <p class="col-span-4 text-right"><?php if($customer['status'] == 1) {echo "On";} else { echo "Off";}?></p>
                                                     <a class="mt-4 text-neutral-100 hover:border border-neutral-100
-                                                    bg-gradient-to-r from-sky-500 to-indigo-500 w-14 h-12 p-2.5 px-3.5"
+                                                    bg-sky-700 w-14 h-12 p-2.5 px-3.5"
                                                        href="/edit/<?= $customer['id'] ?>">edit</a>
                                                 </div>
                                             </div>

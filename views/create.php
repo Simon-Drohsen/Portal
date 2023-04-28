@@ -13,7 +13,7 @@
     </head>
 
     <body>
-        <section class="p-4 bg-gradient-to-r from-sky-700 to-indigo-300">
+        <section class="p-4 bg-gradient-to-r from-sky-700 to-slate-300">
             <nav>
                 <div>
                     <div class=" grid md:grid-cols-4 xl:grid-cols-5 justify-items-center">

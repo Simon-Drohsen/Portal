@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1221c3f2-b1fd-4704-bca8-7e611e67879b" name="Changes" comment="products.php button bearbeitet">
+    <list default="true" id="1221c3f2-b1fd-4704-bca8-7e611e67879b" name="Changes" comment="ka">
       <change beforePath="$PROJECT_DIR$/../Erste Website" beforeDir="false" afterPath="$PROJECT_DIR$/../Erste Website" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Telefon-Evaluieren" beforeDir="false" afterPath="$PROJECT_DIR$/../Telefon-Evaluieren" afterDir="false" />
     </list>
@@ -181,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682673235246</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="ka">
+      <created>1682674135925</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1682674135925</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,6 +214,7 @@
     <MESSAGE value="products ist fertig" />
     <MESSAGE value="master test" />
     <MESSAGE value="products.php button bearbeitet" />
-    <option name="LAST_COMMIT_MESSAGE" value="products.php button bearbeitet" />
+    <MESSAGE value="ka" />
+    <option name="LAST_COMMIT_MESSAGE" value="ka" />
   </component>
 </project>
