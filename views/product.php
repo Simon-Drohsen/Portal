@@ -23,31 +23,33 @@ if(isset($_POST['view'])) {
     </head>
 
     <body class="bg-neutral-100">
-        <section class="p-4 bg-gradient-to-r from-sky-500 to-indigo-500">
+        <section class="p-4 bg-gradient-to-r from-sky-700 to-indigo-300">
             <nav>
                 <div>
-                    <div class="grid grid-cols-5 w-fit justify-items-center">
-                        <div class="w-fit flex flex-wrap content-center mr-4">
+                    <div class=" grid md:grid-cols-4 xl:grid-cols-5 justify-items-center">
+                        <div class="mb-4 md:mb-0 l:w-fit flex flex-wrap content-center mr-4">
                             <h1 class="text-4xl text-neutral-100">Customers</h1>
                         </div>
-                        <div class="flex flex-wrap content-center text-neutral-100">
-                            <a href="<?= $routes->get('product')->getPath(); ?>">Back to Customer &emsp;</a>
+                        <div class="mb-4 md:mb-0 flex l:w-fit flex-wrap content-center text-neutral-100">
                             <a href="<?= $routes->get('product-create')->getPath(); ?>">Create Company</a>
                         </div>
-                        <div class="w-96">
+                        <div class="my-5 md:mb-0 l:w-96 md:w-full h-full w-72">
                             <form method="POST">
-                                <input type="text" placeholder="Search" name="search" class="hidden w-full lg:flex items-center text-sm leading-6 text-sky-700 bg-neutral-100
-                                        ring-1 ring-slate-900/10 shadow-sm py-1.5 pl-2 pr-3 hover:ring-slate-300" >
+                                <input type="text" placeholder="Search" name="search" class="lg:flex
+                                    items-center text-sm leading-6 text-sky-700 bg-neutral-100 w-full
+                                    ring-1 ring-slate-900/10 shadow-sm py-1.5 pl-2 pr-3 hover:ring-slate-300" >
                             </form>
                         </div>
-                        <div class="w-fit flex flex-wrap content-center">
+                        <div class="mb-4 md:mb-0 l:w-fit flex flex-wrap content-center">
                             <form action="products" method="post">
-                                <input class="px-3 bg-neutral-100 hover:text-neutral-100 hover:border border-neutral-100 hover:bg-gradient-to-r hover:from-sky-500 hover:to-indigo-500 w-32 h-12" type="submit" name="view" value="Compact View">
+                                <input class="px-3 bg-neutral-100 hover:text-neutral-100 hover:border border-neutral-100
+                                     hover:bg-gradient-to-r hover:from-sky-500 hover:to-indigo-300 w-32 h-12" type="submit"
+                                       name="view" value="<?php if ($_SESSION['count'] % 2 == 0) {echo "Compact View";} else {echo "Detail View";}?>">
                             </form>
                         </div>
-                        <div>
-                            <a class="w-fit" href="https://w-vision.ch/de">
-                                <img class="w-fit" alt="w-vision Logo" src="../public/assets/images/wvision_rgb.svg">
+                        <div class="invisible 2xl:visible">
+                            <a class="w-full" href="https://w-vision.ch/de">
+                                <img class="w-full" alt="w-vision Logo" src="../public/assets/images/wvision_rgb.svg">
                             </a>
                         </div>
                     </div>
@@ -55,27 +57,28 @@ if(isset($_POST['view'])) {
             </nav>
         </section>
 
-        <section class="px-28 mt-4">
-            <div class="<?php if ($_SESSION['count'] % 2 !== 0) {echo "";} else {echo "";}?>">
+        <section class="mx-auto mt-8 w-11/12">
+            <div>
                 <div>
-                    <div class="<?php if ($_SESSION['count'] % 2 == 0) {echo "grid gap-8 grid-cols-4";} else {echo "";}?>">
+                    <div class="<?php if ($_SESSION['count'] % 2 == 0) {echo "grid gap-8 lg:grid-cols-2 2xl:grid-cols-4";} else {echo "";}?>">
                         <?php if ($_SESSION['count'] % 2 !== 0) :?>
                             <ul class="w-full divide-y divide-neutral-400">
                                 <?php foreach($arrCustomers as $customer): ?>
                                     <li class="py-2.5">
                                         <div>
-                                            <div class="grid gap-8 grid-cols-4">
+                                            <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 2xl:grid-cols-4">
                                                 <div>
                                                     <p><?php print_r($customer['companyName']) ?></p>
                                                 </div>
-                                                <div>
+                                                <div class="order-2 md:order-3">
                                                     <p>Head: <?= $customer['ok'] . " " . $customer['okFirst'] ?></p>
                                                 </div>
                                                 <div>
                                                     <p>Status: <?php if($customer['status'] == 1) {echo "On";} else { echo "Off";}?></p>
                                                 </div>
-                                                <div>
-                                                    <a class="mt-4 text-neutral-100 hover:border border-neutral-100 bg-gradient-to-r from-sky-500 to-indigo-500 w-14 h-12 p-2.5 px-3.5" href="/edit/<?= $customer['id'] ?>">edit</a>
+                                                <div class="mb-4 2xl:my-4 order-4">
+                                                    <a class="mt-4 text-neutral-100 hover:border border-neutral-100 bg-gradient-to-r
+                                                     from-sky-500 to-indigo-500 w-14 h-12 p-2.5 px-3.5" href="/edit/<?= $customer['id'] ?>">edit</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -104,7 +107,9 @@ if(isset($_POST['view'])) {
                                                     <p class="col-span-4 text-right"><?= $customer['ok'] . " " . $customer['okFirst'] ?></p>
                                                     <p>Status:</p>
                                                     <p class="col-span-4 text-right"><?php if($customer['status'] == 1) {echo "On";} else { echo "Off";}?></p>
-                                                    <a class="mt-4 text-neutral-100 hover:border border-neutral-100 bg-gradient-to-r from-sky-500 to-indigo-500 w-14 h-12 p-2.5 px-3.5" href="/edit/<?= $customer['id'] ?>">edit</a>
+                                                    <a class="mt-4 text-neutral-100 hover:border border-neutral-100
+                                                    bg-gradient-to-r from-sky-500 to-indigo-500 w-14 h-12 p-2.5 px-3.5"
+                                                       href="/edit/<?= $customer['id'] ?>">edit</a>
                                                 </div>
                                             </div>
                                         </div>
